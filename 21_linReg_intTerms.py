@@ -64,7 +64,7 @@ coefficients = model_2.params
 X = np.linspace(1, 100, num=20)
 sns.lmplot(x="yLeafs", y="Y", hue="spUsed", data=filtered_df, ci=None, fit_reg=False, aspect=16/9, height=4)
 plt.ylabel("runtime [µs]")
-plt.xlabel("Vehicle Weight")
+plt.xlabel("yLeafs")
 plt.plot(X, coefficients["Intercept"] + coefficients["yLeafs"] * X, "blue")
 plt.plot(X, (coefficients["Intercept"] + coefficients["spUsed"]) + (coefficients["yLeafs"] + coefficients["yLeafs:spUsed"]) * X, "orange");
 plt.savefig("25_yLeafs-Y_spusedHue_fitLine.png", bbox_inches='tight')
